@@ -1,0 +1,41 @@
+name:                hspec-expectations-monadthrow
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/githubuser/hspec-expectations-monadthrow#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Simon Hengel <sol@typeful.net>, Jonathan Fischoff
+maintainer:          jonathangfischoff@gmail.com
+copyright:           	(c) 2011-2015 Simon Hengel, (c) 2016 Jonathan Fischoff
+category:            Testing
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules: Test.Hspec.Expectations.MonadThrow
+  other-modules: Test.Hspec.Expectations.Matcher
+  build-depends: base >= 4.7 && < 5
+               , HUnit
+               , exceptions
+               , deepseq
+               , call-stack
+  default-language:    Haskell2010
+
+test-suite hspec-expectations-monadthrow-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test, src
+  main-is:             Spec.hs
+  build-depends:       base
+                     , hspec
+                     , hspec-expectations
+                     , HUnit
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  buildable: False
+
+source-repository head
+  type:     git
+  location: https://github.com/jfischoff/hspec-expectations-monadthrow
